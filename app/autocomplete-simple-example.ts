@@ -32,8 +32,8 @@ export class AutocompleteSimpleExample {
       x => x.key == key
     )[0].value;
 
-    const EN=this.option.EngPremisesAddress;
-    const CH=this.option.ChiPremisesAddress
+    const EN = this.option.EngPremisesAddress;
+    const CH = this.option.ChiPremisesAddress
 
     this.address1 = EN.EngStreet.BuildingNoFrom + ' ' + EN.EngStreet.StreetName;
     this.address2 = EN.EngDistrict.DcDistrict;
@@ -41,7 +41,7 @@ export class AutocompleteSimpleExample {
   }
   fetchData(s) { // without type info    
 
-    if(s == "") return
+    if (s == "") return
     fetch(`https://www.als.ogcio.gov.hk/lookup?q=${s}`,
       {
         method: 'GET',
