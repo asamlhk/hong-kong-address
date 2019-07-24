@@ -20,6 +20,7 @@ export class AutocompleteSimpleExample {
   address1;
   address2;
   address3;
+  lang="EN"
 
   searchChanged = _.debounce(() => {
     this.fetchData(this.search)
@@ -34,10 +35,17 @@ export class AutocompleteSimpleExample {
 
     const EN = this.option.EngPremisesAddress;
     const CH = this.option.ChiPremisesAddress
-
+    if(this.lang == "EN") {
     this.address1 = EN.EngStreet.BuildingNoFrom + ' ' + EN.EngStreet.StreetName;
     this.address2 = EN.EngDistrict.DcDistrict;
     this.address3 = EN.Region;
+    }
+    else {
+    this.address1 = CH.ChiStreet.StreetName + ' ' + CH.ChiStreet.BuildingNoFrom;
+    this.address2 = CH.ChiDistrict.DcDistrict;
+    this.address3 = CH.Region;
+
+    }
   }
   fetchData(s) { // without type info    
 

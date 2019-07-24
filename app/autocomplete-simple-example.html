@@ -8,6 +8,10 @@
       </mat-option>
     </mat-autocomplete>
   </mat-form-field>
+  <mat-radio-group aria-label="Select an option" [(ngModel)]="lang" name="lang">
+    <mat-radio-button value="CH">Chinese</mat-radio-button>
+    <mat-radio-button value="EN">Engish</mat-radio-button>
+  </mat-radio-group>
   <fieldset>
 	<mat-form-field class="example-full-width">
   <input [(ngModel)]="address1" name="address1" matInput type="text"  placeholder="Address 1"/>
