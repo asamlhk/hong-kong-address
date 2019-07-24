@@ -1,0 +1,30 @@
+<form class="example-form">
+	<mat-form-field class="example-full-width">
+		<input type="text" placeholder="Search for address" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto"   [(ngModel)]="search" (ngModelChange)="searchChanged()" >
+     
+    <mat-autocomplete #auto="matAutocomplete" (optionSelected)="setValue($event)">
+      <mat-option *ngFor="let option of filteredoptions" [value]="option.key">
+        {{option.key}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+  <fieldset>
+	<mat-form-field class="example-full-width">
+  <input [(ngModel)]="address1" name="address1" matInput type="text"  placeholder="Address 1"/>
+	</mat-form-field>
+  	<mat-form-field class="example-full-width">
+  <input [(ngModel)]="address2" name="address2" matInput type="text"  placeholder="Address 2"/>
+  </mat-form-field>
+  	<mat-form-field class="example-full-width">
+  <input [(ngModel)]="address3" name="address3" matInput type="text" placeholder="Address 3"/>
+
+  </mat-form-field>
+  </fieldset>
+</form>
+<pre>
+{{option | json}}
+</pre>
+
+<!-- Copyright 2019 Google Inc. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license -->
